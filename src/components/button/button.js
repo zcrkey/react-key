@@ -7,9 +7,13 @@ export default class Button extends React.Component {
     this.state = {};
   }
 
+  onClick() {
+    alert("点击");
+  }
+
   render() {
     return (
-      <button>我是按钮</button>
+      <button onClick={() => { this.onClick() }}>我是按钮 ^^</button>
     )
   }
 }

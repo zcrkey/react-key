@@ -21,7 +21,7 @@
 
 #### 初始化 package.json 文件,输入相关信息
   ```
-    npm init
+    yarn init
   ```
 
 #### webpack 打包，配置 webpack.config.js 文件
@@ -29,20 +29,30 @@
     yarn add webpack webpack-cli webpack-dev-server --dev
   ```
 
-#### 本地全局安装 npm 包，引用 npm 包
-  * 在本项目执行 npm link 后，会在本地全局安装 react-key npm 包
+#### 安装 npm link 和 yarn link react-key
+  * 在本项目执行 yarn link
   ```
-    npm link
+    yarn link
   ```
-  * 在需要用到 react-key 包的项目中执行 npm link react-key，则会在 node_modules 中安装 react-key 包
+  * 在需要用到 react-key 包的项目中执行 yarn link react-key
   ```
-    npm link react-key
+    yarn link react-key
   ```
   * 总结
   ```
-    在 A 包里
-    npm link    // 相当于npm install A -g
-    在 B 包里
-    npm link A    // 代码无需修改，B包的 node_modules 中引用 A 的包（会自动指向本地 A 包的打包文件）
+    // 在 A 包里
+    yarn link
+    // 在 B 包里
+    yarn link A
   ```
-  * 如果你是使用yarn的话，也有yarn link，而且yarn link还不会污染全局环境（未测试）
+
+#### 卸载 npm unlink 和 yarn unlink react-key
+  * 在本项目执行 yarn unlink
+  * 在用到 react-key 包的项目中执行 yarn unlink react-key
+  * 总结
+  ```
+    // 在 A 包里
+    yarn unlink
+    // 在 B 包里
+    yarn unlink A
+  ```
