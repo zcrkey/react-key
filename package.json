@@ -2,14 +2,13 @@
   "name": "react-key",
   "version": "0.0.1",
   "description": "UI Library Based on react.",
-  "main": "lib/reactkey.js",
+  "main": "lib/index.js",
   "scripts": {
     "yarn": "yarn",
-    "build": "cross-env NODE_ENV=production webpack",
-    "link": "npm link",
-    "link:react-key": "yarn link",
-    "unlink:react-key": "yarn unlink",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cross-env NODE_ENV=development webpack-dev-server --open",
+    "build": "cross-env NODE_ENV=development webpack",
+    "build:npm": "cross-env NODE_ENV=production webpack",
+    "link:npm": "npm link"
   },
   "repository": {
     "type": "git",
@@ -38,6 +37,7 @@
     "cross-env": "^6.0.3",
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.41.3",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   }
 }
