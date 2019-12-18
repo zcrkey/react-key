@@ -1,40 +1,43 @@
 {
   "name": "react-key",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.1",
+  "description": "UI Library Based on react.",
+  "main": "lib/reactkey.js",
   "scripts": {
-    "yarn": "yarn install",
-    "jsdoc": "jsdoc -c jsdoc.config.js -r",
-    "start": "react-scripts start",
-    "build": "react-scripts build"
+    "yarn": "yarn",
+    "build": "cross-env NODE_ENV=production webpack",
+    "link": "npm link",
+    "link:react-key": "yarn link",
+    "unlink:react-key": "yarn unlink",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zcrkey/react-key.git"
   },
+  "keywords": [
+    "react",
+    "ui"
+  ],
+  "author": "zcr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zcrkey/react-key/issues"
+  },
+  "homepage": "https://github.com/zcrkey/react-key#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.25",
-    "@fortawesome/free-solid-svg-icons": "^5.11.2",
-    "@fortawesome/react-fontawesome": "^0.1.7",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0"
+    "react-dom": "^16.10.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
     "babel-loader": "^8.0.6",
-    "babel-plugin-named-asset-import": "^0.3.5",
-    "jsdoc": "^3.6.3",
-    "tui-jsdoc-template": "^1.2.2",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^8.0.0"
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^6.0.3",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.41.3",
+    "webpack-cli": "^3.3.10"
   }
 }
