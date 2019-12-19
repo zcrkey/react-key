@@ -59,12 +59,45 @@
     yarn unlink A
   ```
 
+#### babel-loader 装载机（高版本js转低版本js）
+  * 安装依赖
+  ```
+    yarn add babel-loader --dev
+    yarn add @babel/core --dev
+    yarn add @babel/preset-env --dev
+    yarn add @babel/preset-react --dev // 将 react 进行转换
+  ```
+  * webpack.config.js 配置
+  ```
+    module: {
+      rules: [
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /(node_modules|bower_components)/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              babelrc: false,
+              compact: true,
+              presets: [
+                "@babel/preset-env",
+                "@babel/preset-react"
+              ],
+              plugins: []
+            }
+          }
+        }
+      ]
+    }
+  ```
+
+
 #### jsdoc 注释文档
   * 安装 vs code 插件：Document This，快捷键：Ctrl+Alt+D,Ctrl+Alt+D
   * 安装依赖
   ```
-    yarn add jsdoc --save-dev
-    yarn add tui-jsdoc-template // 输出模板样式
+    yarn add jsdoc --dev
+    yarn add tui-jsdoc-template --dev // 输出模板样式
   ```
   * jsdoc.config.js 配置文件(jsdoc.config.js)
   * 输出文档(jsdoc)
@@ -74,3 +107,4 @@
     // 3、-r 告诉jsdoc循环source.include文件夹的子目录
     jsdoc -c jsdoc.config.js -r
    ```
+  
