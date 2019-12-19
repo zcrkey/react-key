@@ -9,7 +9,8 @@
     "build": "cross-env NODE_ENV=development webpack",
     "build:npm": "cross-env NODE_ENV=production webpack",
     "link:npm": "yarn link",
-    "unlink:npm": "yarn unlink"
+    "unlink:npm": "yarn unlink",
+    "jsdoc": "jsdoc -c jsdoc.config.js -r"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,8 @@
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.41.3",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.9.0",
+    "jsdoc": "^3.6.3",
+    "tui-jsdoc-template": "^1.2.2"
   }
 }
