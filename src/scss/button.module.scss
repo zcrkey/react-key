@@ -1,0 +1,64 @@
+@charset 'utf-8';
+
+$bgColor: #009688;
+
+.button {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-size: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  outline: 0;
+
+  display: inline-block;
+  height: 38px;
+  line-height: 38px;
+  padding: 0 18px;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 2px;
+  cursor: pointer;
+  border: 1px solid #c9c9c9;
+  background-color: #fff;
+  color: #555;
+}
+
+.button + .button {
+  margin-left: 10px;
+}
+
+.button-primary {
+  background-color: $bgColor;
+  color: #fff;
+  border: none;
+}
+
+.button-normal {
+  background-color: #1e9fff;
+  color: #fff;
+  border: none;
+}
+
+.button-warm {
+  background-color: #ffb800;
+  color: #fff;
+  border: none;
+}
+
+.button-danger {
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+}
+
+.button-disabled {
+  border: 1px solid #e6e6e6;
+  background-color: #fbfbfb;
+  color: #c9c9c9;
+  cursor: not-allowed;
+  opacity: 1;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../../scss/input.module.css';
 
 export default class Input extends React.Component {
 
@@ -9,7 +10,9 @@ export default class Input extends React.Component {
 
   render() {
     return (
-      <input placeholder="请输入" />
+      <div>
+        <input className={styles.input} placeholder="请输入" />
+      </div>
     )
   }
 }

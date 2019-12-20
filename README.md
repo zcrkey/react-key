@@ -12,12 +12,14 @@
   * src 文件夹（源代码）
   * test 文件夹（测试）
   * .gitignore 文件（git管理配置）
+  * .npmrc 文件(获取npm包配置) 
   * LICENSE 文件（软件版权）
   * package.json 文件（定义项目所需要的各种模块，以及项目的配置信息）
   * README.md 文件（自述文件）
-  * webpack.config.js（webpack 配置）
-  * jsdoc.config.js（jsdoc 配置）
-  * jsdoc.css（jsdoc 样式修改）
+  * webpack.config.js 文件（webpack 配置）
+  * jsdoc.config.js 文件（jsdoc 配置）
+  * jsdoc.css 文件（jsdoc 样式修改）
+  * postcss.config.js 文件（postcss 配置信息）
 
 ### 开发流程
 
@@ -67,7 +69,7 @@
     yarn add @babel/preset-env --dev
     yarn add @babel/preset-react --dev // 将 react 进行转换
   ```
-  * webpack.config.js 配置
+  * 添加 webpack.config.js 配置
   ```
     module: {
       rules: [
@@ -99,7 +101,7 @@
     yarn add jsdoc --dev
     yarn add tui-jsdoc-template --dev // 输出模板样式
   ```
-  * jsdoc.config.js 配置文件(jsdoc.config.js)
+  *  添加 jsdoc.config.js 配置文件
   * 输出文档(jsdoc)
    ```
     // 1、-d 指定注释文档输出路径（已经在 jsdoc.config.js 进行指定）
@@ -108,3 +110,70 @@
     jsdoc -c jsdoc.config.js -r
    ```
   
+#### css-loader 装载机、postcss-loader 装载机、sass-loader 装载机、file-loader 装载机（处理 css 集合）
+  * 安装依赖
+  ```
+    yarn add css-loader mini-css-extract-plugin --dev
+    yarn add sass-loader node-sass --dev
+    yarn add postcss-loader postcss-preset-env postcss-flexbugs-fixes  --dev
+    yarn add file-loader --dev
+  ```
+  * mini-css-extract-plugin  css 打包插件
+  * css-loader（全局样式、局部样式，其中局部样式的文件名称格式为（xxx.module.css）） 和 sass-loader
+  ```
+    module: {
+      rules: [
+        // 局部样式配置信息
+        {
+          test: /\.module\.(sa|sc|c)ss$/,
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                modules: {
+                  mode: 'local',
+                  localIdentName: 'rk_style_[local]__[hash:base64:5]'
+                }
+              }
+            },
+            'sass-loader'
+          ]
+        }
+      ]
+    }
+  ```
+  * postcss-loader 配置
+  ```
+  module: {
+      rules: [
+        {
+          test: /\.(sa|sc|c)ss$/,
+          exclude: /\.module\.(sa|sc|c)ss$/,
+          use: [
+            {
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                plugins: () => [
+                  // 试图解决所有 flexbug 的问题
+                  require('postcss-flexbugs-fixes'),
+                  // 将现代 css 转换为大多数浏览器都能理解的内容，根据目标浏览器或运行时环境确定所需的 polyfill
+                  require('postcss-preset-env')({
+                    // 自动添加浏览器样式前缀
+                    autoprefixer: {},
+                    // 根据 css 在实现 web 标准过程中的稳定性来确定要 polyfill 的 css 特性
+                    stage: 3,
+                  }),
+                ]
+              },
+            }
+          ],
+        },
+      ]
+  }
+  ```
+  * use 执行顺序说明
+  ```
+  use:['css-loader','postcss-loader','scss-loader'] // 从后往前执行，即先执行 scss-loader，然后执行 postcss-loader，最后执行 css-loader
+  ```
+  * 详细参考 webpack.config.js 配置

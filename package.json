@@ -6,11 +6,23 @@
   "scripts": {
     "yarn": "yarn",
     "start": "cross-env NODE_ENV=development webpack-dev-server --open",
-    "build": "cross-env NODE_ENV=development webpack",
-    "build:npm": "cross-env NODE_ENV=production webpack",
+    "build": "cross-env NODE_ENV=production webpack",
+    "build:npm": "cross-env NODE_ENV=production-npm webpack",
     "link:npm": "yarn link",
     "unlink:npm": "yarn unlink",
     "jsdoc": "jsdoc -c jsdoc.config.js -r"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "repository": {
     "type": "git",
@@ -37,11 +49,19 @@
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^6.0.3",
+    "css-loader": "^3.4.0",
+    "file-loader": "^5.0.2",
     "html-webpack-plugin": "^3.2.0",
+    "jsdoc": "^3.6.3",
+    "mini-css-extract-plugin": "^0.8.2",
+    "node-sass": "^4.13.0",
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "sass-loader": "^8.0.0",
+    "tui-jsdoc-template": "^1.2.2",
     "webpack": "^4.41.3",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0",
-    "jsdoc": "^3.6.3",
-    "tui-jsdoc-template": "^1.2.2"
+    "webpack-dev-server": "^3.9.0"
   }
 }

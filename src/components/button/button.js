@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../../scss/button.module.scss';
 
 export default class Button extends React.Component {
 
@@ -12,8 +13,9 @@ export default class Button extends React.Component {
   }
 
   render() {
+    let { type, text } = this.props;
     return (
-      <button onClick={() => { this.onClick() }}>我是按钮 ^^</button>
+      <button className={styles.button + " " + styles['button-' + type]} onClick={() => { this.onClick() }}>{text ? text : ''}</button>
     )
   }
 }

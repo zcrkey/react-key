@@ -4,6 +4,8 @@
 
 # production
 
+# compiled output
+/dist
 
 npm-debug.log*
 yarn-debug.log*
