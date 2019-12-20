@@ -13,9 +13,12 @@ export default class Button extends React.Component {
   }
 
   render() {
+    console.log(styles);
     let { type, text } = this.props;
     return (
-      <button className={styles.button + " " + styles['button-' + type]} onClick={() => { this.onClick() }}>{text ? text : ''}</button>
+      <button className={styles.button + " " + styles['button-' + type]} onClick={() => { this.onClick() }}>
+        {text ? text : ''}
+      </button>
     )
   }
 }

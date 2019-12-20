@@ -116,7 +116,6 @@
     yarn add css-loader mini-css-extract-plugin --dev
     yarn add sass-loader node-sass --dev
     yarn add postcss-loader postcss-preset-env postcss-flexbugs-fixes  --dev
-    yarn add file-loader --dev
   ```
   * mini-css-extract-plugin  css 打包插件
   * css-loader（全局样式、局部样式，其中局部样式的文件名称格式为（xxx.module.css）） 和 sass-loader
@@ -177,3 +176,40 @@
   use:['css-loader','postcss-loader','scss-loader'] // 从后往前执行，即先执行 scss-loader，然后执行 postcss-loader，最后执行 css-loader
   ```
   * 详细参考 webpack.config.js 配置
+
+
+#### url-loader 装载机
+  * 安装依赖
+  ```
+    yarn add url-loader --dev
+  ```
+  * 将图片文件作为资源文件存放到指定目录下或者以转化成 base64 方式减少网络请求
+  ```
+  module: {
+    rules: [
+      {
+				test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+				loader: 'url-loader',
+				options: {
+					limit: 102400, // 单位为b，这里设置为100KB，小于100KB，则以 base64 方式存放
+					name: 'assets/[name].[hash:8].[ext]',
+				},
+			}
+    ]
+  } 
+  ```
+  * 将字体文件作为资源文件存放到指定目录下
+  ```
+  module: {
+    rules: [
+      {
+				test: [/\.eot$/, /\.ttf$/, /\.svg$/, /\.woff$/, /\.woff2$/],
+				loader: 'url-loader',
+				options: {
+					limit: 10240, // 单位为b，这里设置为10KB，小于10KB，则以 base64 方式存放
+					name: 'iconfont/[name].[hash:8].[ext]',
+				},
+			}
+    ]
+  }
+  ```
