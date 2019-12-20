@@ -236,7 +236,7 @@ if (isEnvProductionNPM) {
 		...config.plugins
 	];
 
-	// 排除某个库
+	// 排除某个库 TODO：react-router-dom 未排除掉
 	config.externals = {
 		...config.externals,
 		'react': {

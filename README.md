@@ -181,7 +181,7 @@
 #### url-loader 装载机
   * 安装依赖
   ```
-    yarn add url-loader --dev
+    yarn add file-loader url-loader --dev
   ```
   * 将图片文件作为资源文件存放到指定目录下或者以转化成 base64 方式减少网络请求
   ```

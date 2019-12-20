@@ -9,9 +9,9 @@ export default class Iconfont extends React.Component {
   }
 
   render() {
-    const { name } = this.props
+    const { name, size } = this.props
     return (
-      <i className={'rk-icon rk-icon-' + name} ></i >
+      <i className={'rk-icon rk-icon-' + name} style={{ fontSize: size }}></i >
     )
   }
 }
