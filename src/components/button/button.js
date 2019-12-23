@@ -11,6 +11,7 @@ import '../../scss/button.scss';
  * @class Button
  * @extends {React.Component}
  * @static
+ * @param {*} formType 表单类型
  * @param {*} type 类型
  * @param {*} size 大小
  * @param {*} radius 圆角
@@ -27,6 +28,7 @@ export default class Button extends React.Component {
   }
 
   static propTypes = {
+    formType: PropTypes.oneOf(['button', 'reset', 'submit']),
     type: PropTypes.oneOf(['default', 'primary', 'success', 'info', 'warn', 'danger', 'link']),
     size: PropTypes.oneOf(['lg', 'md', 'sm', 'xs']),
     icon: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
@@ -38,6 +40,7 @@ export default class Button extends React.Component {
   };
 
   static defaultProps = {
+    formType: 'button',
     type: 'default',
     size: 'md',
     disabled: false
@@ -76,7 +79,7 @@ export default class Button extends React.Component {
   }
 
   render() {
-    let { icon, title, style, radius, disabled, children, onClick } = this.props;
+    let { icon, formType, title, style, radius, disabled, children, onClick, others } = this.props;
     if (radius != null) {
       style = style || {};
       style.borderRadius = radius + 'px';
@@ -85,8 +88,10 @@ export default class Button extends React.Component {
       <button
         style={style}
         className={this.buildClass()}
+        type={formType}
         disabled={disabled}
-        onClick={() => { onClick && onClick() }}
+        onClick={!!onClick && onClick()}
+        {...others}
       >
         {!!icon ? this.buildIcon() : null}
         {children ? children : title}

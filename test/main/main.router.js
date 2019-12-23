@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import HomePage from '../home-page/home-page';
 import ButtonPage from '../button-page/button-page';
 import IconPage from '../icon-page/icon-page';
+import FormPage from '../form-page/form-page';
 
 export default class MainRouter extends React.Component {
 
@@ -14,6 +15,7 @@ export default class MainRouter extends React.Component {
         <Route path="/main/home-page" component={HomePage} />
         <Route path="/main/button-page" component={ButtonPage} />
         <Route path="/main/icon-page" component={IconPage} />
+        <Route path="/main/form-page" component={FormPage} />
         <Route path="*" component={HomePage} />
       </Switch >
     )

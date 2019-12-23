@@ -30,6 +30,7 @@ export default class Main extends React.Component {
           <Link to="/main/home-page">首页</Link>
           <Link to="/main/button-page">按钮</Link>
           <Link to="/main/icon-page">图标</Link>
+          <Link to="/main/form-page">表单</Link>
         </div>
         <div className={styles.centent}>
           <MainRouter></MainRouter>

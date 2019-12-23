@@ -24,7 +24,7 @@ export default class ButtonGroup extends React.Component {
   render() {
     let { children } = this.props;
     return (
-      <div className={"rk-btn-group"}>
+      <div className='rk-btn-group'>
         {children ? children : title}
       </div>
     )
