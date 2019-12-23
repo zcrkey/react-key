@@ -90,7 +90,7 @@ export default class Button extends React.Component {
         className={this.buildClass()}
         type={formType}
         disabled={disabled}
-        onClick={!!onClick && onClick()}
+        onClick={() => { !!onClick && onClick() }}
         {...others}
       >
         {!!icon ? this.buildIcon() : null}
