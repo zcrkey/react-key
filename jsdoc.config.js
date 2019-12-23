@@ -31,11 +31,11 @@ module.exports = {
     },
     "name": "react-key",
     "footerText": "React Key JSDoc",
-    // "default": {
-    //   "staticFiles": {
-    //     "include": ["src/css/"]
-    //   }
-    // },
+    "default": {
+      "staticFiles": {
+        "include": ["./"]
+      }
+    },
     "css": [
       "jsdoc.css",
     ]

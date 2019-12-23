@@ -1,11 +1,13 @@
 import Button from './components/button/button.js';
+import ButtonGroup from './components/button/button-group.js';
+import Icon from './components/icon/icon.js';
 import Input from './components/input/input.js';
 import Div from './components/div/div.js';
-import Iconfont from './components/iconfont/iconfont.js';
 
 export {
   Button,
+  ButtonGroup,
   Input,
   Div,
-  Iconfont
+  Icon
 };

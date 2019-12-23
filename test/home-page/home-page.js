@@ -15,7 +15,7 @@ export default class HomePage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="page">
         <div className="h1">首页</div>
         <img src={minImages}></img>
         <img src={maxImages} width='84' height='84'></img>

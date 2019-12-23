@@ -27,9 +27,9 @@ export default class Main extends React.Component {
     return (
       <div className={styles.main}>
         <div className={styles.menu}>
-          <Link to="/main/home">首页</Link>
-          <Link to="/main/button">按钮</Link>
-          <Link to="/main/iconfont">图标</Link>
+          <Link to="/main/home-page">首页</Link>
+          <Link to="/main/button-page">按钮</Link>
+          <Link to="/main/icon-page">图标</Link>
         </div>
         <div className={styles.centent}>
           <MainRouter></MainRouter>

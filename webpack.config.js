@@ -33,6 +33,7 @@ let config = {
 							"@babel/preset-react"
 						],
 						plugins: [
+							"@babel/plugin-proposal-class-properties"
 						]
 					}
 				}
@@ -86,7 +87,7 @@ let config = {
 						options: {
 							modules: {
 								mode: 'local',
-								localIdentName: 'rk_style_[local]__[hash:8]'
+								localIdentName: '[local]__[hash:8]'
 							}
 						}
 					},

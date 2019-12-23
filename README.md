@@ -12,14 +12,13 @@
   * src 文件夹（源代码）
   * test 文件夹（测试）
   * .gitignore 文件（git管理配置）
-  * .npmrc 文件(获取npm包配置) 
+  * .npmrc 文件（获取npm包配置）
   * LICENSE 文件（软件版权）
   * package.json 文件（定义项目所需要的各种模块，以及项目的配置信息）
   * README.md 文件（自述文件）
   * webpack.config.js 文件（webpack 配置）
   * jsdoc.config.js 文件（jsdoc 配置）
   * jsdoc.css 文件（jsdoc 样式修改）
-  * postcss.config.js 文件（postcss 配置信息）
 
 ### 开发流程
 
@@ -68,6 +67,7 @@
     yarn add @babel/core --dev
     yarn add @babel/preset-env --dev
     yarn add @babel/preset-react --dev // 将 react 进行转换
+    yarn add @babel/plugin-proposal-class-properties --dev // 转换静态类属性
   ```
   * 添加 webpack.config.js 配置
   ```
@@ -85,7 +85,9 @@
                 "@babel/preset-env",
                 "@babel/preset-react"
               ],
-              plugins: []
+              plugins: [
+                "@babel/plugin-proposal-class-properties"
+              ]
             }
           }
         }
@@ -213,3 +215,7 @@
     ]
   }
   ```
+
+#### 引入的 npm 包
+  * classnames 方便处理react className 样式
+  * prop-types 类型检查

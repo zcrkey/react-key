@@ -1,0 +1,144 @@
+@charset 'utf-8';
+
+$margin: 6px;
+
+.rk-btn {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-size: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  outline: 0;
+
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+
+.rk-btn + .rk-btn {
+  margin-left: $margin;
+}
+
+/**** 大小 ****/
+
+.rk-btn-lg {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 2px;
+}
+
+.rk-btn-md {
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 2px;
+}
+
+.rk-btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 2px;
+}
+
+.rk-btn-xs {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 2px;
+}
+
+/**** 类型 ****/
+.rk-btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.rk-btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+.rk-btn-info {
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+.rk-btn-success {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.rk-btn-warn {
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+
+.rk-btn-danger {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+.rk-btn-link {
+  font-weight: 400;
+  color: #337ab7;
+  border-radius: 0px;
+  background-color: transparent;
+}
+
+/**** 禁用 ****/
+.rk-btn[disabled] {
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.65;
+}
+
+/**** 按钮组 ****/
+.rk-btn-group {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+
+  // radius
+  .rk-btn {
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    margin: 0px;
+    border-radius: 0;
+    &:first-child {
+      border-radius: 2px 0 0 2px;
+    }
+    &:last-child {
+      border-radius: 0 2px 2px 0;
+    }
+  }
+}
+
+.rk-btn-group + .rk-btn-group {
+  margin-left: $margin;
+}
