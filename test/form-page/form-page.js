@@ -16,6 +16,22 @@ export default class FormPage extends React.Component {
     return (
       <div className='page'>
         <div className='h1'>表单</div>
+        <pre>
+          <span>输入框input、 </span>
+          <span>文本框textarea、 </span>
+          <span>单选框radio、 </span>
+          <span>复选框checkbox、 </span>
+          <span>下拉框select、 </span>
+          <span>多选下拉框multiple-select、 </span>
+          <span>联动选择框、 </span>
+          <span>树形选择框tree-select、 </span>
+          <span>日期选择框date-select、 </span>
+          <span>时间选择框time-select、 </span>
+          <span>开关switch、 </span>
+          <span>评分rate、 </span>
+          <span>上传upload、 </span>
+          <span>滑块slider</span>
+        </pre>
 
         <fieldset><legend><a>内联表单</a></legend></fieldset>
         <form style={{ display: 'flex' }}>
