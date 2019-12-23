@@ -58,7 +58,7 @@ export default class ButtonPage extends React.Component {
         <Button title={'按钮'} size={"xs"} type={"primary"} icon="radio" onClick={() => { this.onClick() }} />
         <br></br>
         <br></br>
-        <Button title={'自定义'} size={"md"} type={"primary"} icon={<i style={{ marginRight: '5px', fontSize: '100%' }} className="rk-icon rk-icon-radio-active"></i>} onClick={() => { this.onClick() }} />
+        <Button title={'自定义'} size={"md"} type={"info"} icon={<i style={{ marginRight: '5px', fontSize: '100%' }} className="rk-icon rk-icon-radio-active"></i>} onClick={() => { this.onClick() }} />
         <Button type={"info"} icon="checkbox" onClick={() => { this.onClick() }} />
         <Button type={"info"} icon="checkbox-active" onClick={() => { this.onClick() }} />
 
