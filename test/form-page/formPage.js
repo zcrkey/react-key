@@ -5,14 +5,16 @@ export default class FormPage extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      formData: {}
+    };
   }
 
   componentDidMount() {
   }
 
   render() {
-    let { iconData } = this.state;
+    let { formData } = this.state;
     return (
       <div className='page'>
         <div className='h1'>表单</div>
@@ -36,14 +38,20 @@ export default class FormPage extends React.Component {
         <fieldset><legend><a>内联表单</a></legend></fieldset>
         <form style={{ display: 'flex' }}>
           <div style={{ width: '50%' }}>
+
+            <FormItem label={(formData.test ? formData.test + ' ' : '') + '数据绑定'} >
+              <Input parent={this} name="test" value={formData.test} required placeholder='请输入...'></Input>
+            </FormItem>
+
             <FormItem label='输入框' >
-              <Input placeholder='请输入...'></Input>
+              <Input name="text" placeholder='请输入...'></Input>
             </FormItem>
             <FormItem label='密码框' >
-              <Input type='password'></Input>
+              <Input name="password" type='password'></Input>
             </FormItem>
             <FormItem label='事件' >
               <Input
+                name="event"
                 onChange={(e) => {
                   console.log('onChange:', e);
                 }}
@@ -58,13 +66,20 @@ export default class FormPage extends React.Component {
           </div>
           <div style={{ width: '50%' }}>
             <FormItem label='数字框'>
-              <Input type='number'></Input>
+              <Input name="number" type='number'></Input>
+            </FormItem>
+            <FormItem label='必填框' >
+              <Input name="required" placeholder='' required></Input>
             </FormItem>
             <FormItem label='禁用框' >
-              <Input placeholder='' disabled={true}></Input>
+              <Input name="disabled" placeholder='' disabled></Input>
+            </FormItem>
+            <FormItem label='只读框' >
+              <Input name="readonly" placeholder='' readonly></Input>
             </FormItem>
             <FormItem label='事件' >
               <Input
+                name="others"
                 others={
                   {
                     onChange: (e) => {
@@ -86,16 +101,17 @@ export default class FormPage extends React.Component {
         <form>
           <div style={{ width: '50%' }}>
             <FormItem label='输入框' vertical={true}>
-              <Input placeholder='请输入...'></Input>
+              <Input name="text" placeholder='请输入...'></Input>
             </FormItem>
             <FormItem label='密码框' vertical={true}>
-              <Input type='password'></Input>
+              <Input name="password" type='password'></Input>
             </FormItem>
             <FormItem label='数字框' vertical={true}>
-              <Input type='number'></Input>
+              <Input name="number" type='number'></Input>
             </FormItem>
             <FormItem label='事件' vertical={true}>
               <Input
+                name="event"
                 onChange={(e) => {
                   console.log('onChange:', e);
                 }}
@@ -108,7 +124,7 @@ export default class FormPage extends React.Component {
               ></Input>
             </FormItem>
             <FormItem label='禁用框' vertical={true}>
-              <Input placeholder='' disabled={true}></Input>
+              <Input name="disabled" placeholder='' disabled={true}></Input>
             </FormItem>
           </div>
         </form>

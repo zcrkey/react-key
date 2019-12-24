@@ -1,0 +1,16 @@
+@charset 'utf-8';
+
+// 超出部分省略号
+.rk-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// 星号
+.rk-star {
+  display: inline-block;
+  margin: 0px 5px;
+  color: #f04134;
+  font-size: 14px;
+}

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
 
-import HomePage from '../home-page/home-page';
-import ButtonPage from '../button-page/button-page';
-import IconPage from '../icon-page/icon-page';
-import FormPage from '../form-page/form-page';
+import HomePage from '../home-page/homePage';
+import ButtonPage from '../button-page/buttonPage';
+import IconPage from '../icon-page/iconPage';
+import FormPage from '../form-page/formPage';
 
 export default class MainRouter extends React.Component {
 

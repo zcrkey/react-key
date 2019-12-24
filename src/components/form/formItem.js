@@ -42,9 +42,14 @@ export default class FormItem extends React.Component {
 
   render() {
     let { label, labelStyle, contentStyle, children } = this.props;
+    let required = !!children && !!children.props && !!children.props.required ? true : false
     return (
       <div style={labelStyle} className={this.buildFormClass()}>
-        <label className='rk-form-label'>{label}</label>
+        {/* TODO:title、Tips */}
+        <label className='rk-form-label rk-ellipsis'>
+          {required ? <span className={'rk-star'}>*</span> : null}
+          {label}
+        </label>
         <div style={contentStyle} className='rk-form-content'>
           {children}
         </div>
