@@ -18,7 +18,6 @@
   * README.md 文件（自述文件）
   * webpack.config.js 文件（webpack 配置）
   * jsdoc.config.js 文件（jsdoc 配置）
-  * jsdoc.css 文件（jsdoc 样式修改）
 
 ### 开发流程
 
@@ -49,7 +48,7 @@
     yarn link A
   ```
 
-#### 卸载 npm unlink 和 yarn unlink react-key
+#### 卸载 yarn unlink 和 yarn unlink react-key
   * 在本项目执行 yarn unlink
   * 在用到 react-key 包的项目中执行 yarn unlink react-key
   * 总结

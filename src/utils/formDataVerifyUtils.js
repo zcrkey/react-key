@@ -13,7 +13,7 @@ export default class FormDataVerifyUtils {
    * @param {*} inputValue
    * @param {*} title
    * @param {*} verify
-   * @returns
+   * @returns verifyInfo
    * @memberof FormDataVerifyUtils
    */
   static verifyData(inputValue, title, verify) {

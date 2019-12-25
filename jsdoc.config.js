@@ -33,17 +33,17 @@ module.exports = {
     "footerText": "React Key JSDoc",
     "default": {
       "staticFiles": {
-        "include": ["./"]
+        "include": ["./src"]
       }
     },
     "css": [
-      "jsdoc.css",
+      "jsdoc/jsdoc.css",
     ]
   },
   // 指定输出配置
   "opts": {
     "template": "node_modules/tui-jsdoc-template", // 文档所使用的模板
     "encoding": "utf8",
-    "destination": "./jsdoc/",
+    "destination": "./jsdoc",
   }
 }
