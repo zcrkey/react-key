@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Classnames from 'classnames';
-import '../../scss/form.scss';
 
 /**
  * 表单项组件

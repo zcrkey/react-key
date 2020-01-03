@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../scss/button.scss';
 
 /**
  * 按钮组组件

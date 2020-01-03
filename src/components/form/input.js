@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../scss/form.scss';
 
 /**
  * 输入框组件

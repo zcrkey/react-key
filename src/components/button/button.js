@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Classnames from 'classnames';
 import Icon from '../icon/icon.js';
-import '../../scss/button.scss';
 
 /**
  * 按钮组件
